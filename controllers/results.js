@@ -50,14 +50,25 @@ const data = [
   }
 ]
 
-router.get('/', (req, res) => {
-  res.render('results', { data: data })
-})
+// router.get('/', (req, res) => {
+//   res.render('results', { data: data })
+// })
 // Create POST controller
 router.post('/', (req, res) => {
-  res.render('results')
-  console.log(req.body)
+  let searchValue = req.body.search
+
+  res.render('results', {
+    results: titleIncludes(data, searchValue)
+  })
 })
+
+// Function that selects only items with title related to Search
+const titleIncludes = (data, text) => {
+  let newArr = data.filter(element =>
+    element.title.toLowerCase().includes(text.toLowerCase())
+  )
+  return newArr
+}
 
 // Export module
 module.exports = router
