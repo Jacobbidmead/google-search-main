@@ -54,6 +54,10 @@ router.get('/', (req, res) => {
   res.render('results', { data: data })
 })
 // Create POST controller
+router.post('/', (req, res) => {
+  res.render('results')
+  console.log(req.body)
+})
 
 // Export module
 module.exports = router
