@@ -8,26 +8,37 @@
       </form>
     </nav>
     <div class="results">
+
       <small>37 Results</small>
-      <small>www.w3school.com</small>
     </div>
-    <section>
-      <a href="#" target="_blank" class="result-title"
-        ><h1>JavaScript Tutorial - W3School</h1></a
-      >
+
+
+		<section>
+        {{#each data as |element|}}
+				<small>{{element.url}}</small>
+      		<a href="#" target="_blank" class="result-title">
+
+						<h1>{{element.title}}</h1></a>
+
+
       <p>
-        Well organized and easy to understand Web building tutorials with lots
+				{{element.description}}
+        <!-- Well organized and easy to understand Web building tutorials with lots
         of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python,
-        Bootstrap, Java
+        Bootstrap, Java -->
       </p>
-      <ul class="links">
-        <li><a href="#" target="_blank">JavaScript Introduction</a></li>
-        <li><a href="#" target="_blank">JS Functions</a></li>
-        <li><a href="#" target="_blank">JavaScript Examples</a></li>
+
+
+			<ul class="links"  >
+				{{#each links as |link|}}
+	        <li><a href="{{link.url}}" target="_blank">JavaScript Introduction</a></li>
+        {{/each}}
       </ul>
-      <small>developer.mozilla.org</small>
+
+					<!-- <small>{{element.url}}</small> -->
+				{{/each}}
     </section>
-    <section class="search-results">
+    <!-- <section class="search-results">
       <a href="#" target="_blank" class="result-title"
         ><h1>JavaScript | MDN</h1></a
       >
@@ -44,7 +55,9 @@
         <li><a href="#" target="_blank">JS Code</a></li>
         <li><a href="#" target="_blank">JavaScript Meaning</a></li>
       </ul>
-      <small>en.wikipedia.org</small>
+
+
+			<small>en.wikipedia.org</small>
     </section>
     <section class="search-results">
       <a href="#" target="_blank" class="result-title"
@@ -54,9 +67,14 @@
         JavaScript often abbreviated as JS, is a programming language that
         conforms to ECMAScript specification. JavaScript is high-level, often
         just-in-time.
-      </p>
-      <ul class="links">
+			</p>
+
+
+
+			<ul class="links">
         <li><a href="#" target="_blank">JavaScript Online</a></li>
         <li><a href="#" target="_blank">JavaScript Definition</a></li>
-      </ul>
-    </section>
+      </ul> -->
+
+
+		</section>
