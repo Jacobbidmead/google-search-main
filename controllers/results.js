@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 
-const data = [
+const allResults = [
   {
     title: 'JS tutorials',
     description: 'The best JavaScript tutorials in the galaxy!',
@@ -54,9 +54,9 @@ const data = [
 //   res.render('results', { data: data })
 // })
 // Function that selects only items with title related to Search
-const titleIncludes = (data, text) =>
-  data.filter(element =>
-    element.title.toLowerCase().includes(text.toLowerCase())
+const titleIncludes = (allResults, text) =>
+  allResults.filter(result =>
+    result.title.toLowerCase().includes(text.toLowerCase())
   )
 
 // Create POST controller
@@ -64,7 +64,7 @@ router.post('/', (req, res) => {
   let searchValue = req.body.search
 
   res.render('results', {
-    data: titleIncludes(data, searchValue)
+    resultsList: titleIncludes(allResults, searchValue)
   })
 })
 

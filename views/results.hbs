@@ -14,27 +14,8 @@
 
 
 		<section>
-        {{#each data as |element|}}
-				  <small>{{element.url}}</small>
-      		<a href="#" class="result-title">
-
-						<h1>{{element.title}}</h1></a>
-
-
-      <p>
-				{{element.description}}
-        <!-- Well organized and easy to understand Web building tutorials with lots
-        of examples of how to use HTML, CSS, JavaScript, SQL, PHP, Python,
-        Bootstrap, Java -->
-      </p>
-
-
-			<ul class="links"  >
-				{{#each links as |link|}}
-	        <li><a href="{{link.url}}" target="_blank">JavaScript Introduction</a></li>
-        {{/each}}
-      </ul>
-
+    		{{#each resultsList as |singleResult|}}
+		  			{{> result result=singleResult}}
 				{{/each}}
     </section>
     <!-- <section class="search-results">
