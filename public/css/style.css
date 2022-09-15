@@ -90,7 +90,7 @@ input {
   border-width: 1px;
   border-radius: 18px;
   width: 400px;
-  height: 40px;
+  padding: 10px 20px;
 }
 
 .wrap input {

@@ -1,7 +1,7 @@
 <nav class="wrap-results">
       <img src="/img/google.png" class="logo-results" />
       <form class="header-results">
-        <input type="search" />
+        <input type="search" autocomplete="off"/>
         <button type="submit">
           Search
         </button>
@@ -15,8 +15,8 @@
 
 		<section>
         {{#each data as |element|}}
-				<small>{{element.url}}</small>
-      		<a href="#" target="_blank" class="result-title">
+				  <small>{{element.url}}</small>
+      		<a href="#" class="result-title">
 
 						<h1>{{element.title}}</h1></a>
 
@@ -35,7 +35,6 @@
         {{/each}}
       </ul>
 
-					<!-- <small>{{element.url}}</small> -->
 				{{/each}}
     </section>
     <!-- <section class="search-results">
@@ -75,6 +74,3 @@
         <li><a href="#" target="_blank">JavaScript Online</a></li>
         <li><a href="#" target="_blank">JavaScript Definition</a></li>
       </ul> -->
-
-
-	
