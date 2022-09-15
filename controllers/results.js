@@ -34,8 +34,8 @@ const allResults = [
     ]
   },
   {
-    title: 'fish',
-    description: 'The best JavaScript tutorials in the galaxy!',
+    title: 'Fish',
+    description: 'The best fish tutorials in the galaxy!',
     url: 'https://www.w3schools.com',
     links: [
       {
