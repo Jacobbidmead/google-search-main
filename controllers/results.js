@@ -19,7 +19,7 @@ const data = [
     ]
   },
   {
-    title: 'JS tutorials',
+    title: 'cats',
     description: 'The best JavaScript tutorials in the galaxy!',
     url: 'https://www.w3schools.com',
     links: [
@@ -34,7 +34,7 @@ const data = [
     ]
   },
   {
-    title: 'JS tutorials',
+    title: 'fish',
     description: 'The best JavaScript tutorials in the galaxy!',
     url: 'https://www.w3schools.com',
     links: [
@@ -53,22 +53,20 @@ const data = [
 // router.get('/', (req, res) => {
 //   res.render('results', { data: data })
 // })
+// Function that selects only items with title related to Search
+const titleIncludes = (data, text) =>
+  data.filter(element =>
+    element.title.toLowerCase().includes(text.toLowerCase())
+  )
+
 // Create POST controller
 router.post('/', (req, res) => {
   let searchValue = req.body.search
 
   res.render('results', {
-    results: titleIncludes(data, searchValue)
+    data: titleIncludes(data, searchValue)
   })
 })
-
-// Function that selects only items with title related to Search
-const titleIncludes = (data, text) => {
-  let newArr = data.filter(element =>
-    element.title.toLowerCase().includes(text.toLowerCase())
-  )
-  return newArr
-}
 
 // Export module
 module.exports = router
