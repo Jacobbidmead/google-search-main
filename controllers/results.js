@@ -15,12 +15,15 @@ const Results = require('../models/results')
 // Create POST controller
 router.post('/', async (req, res) => {
   let searchValue = req.body.search
+  // searchValue = whats entered into search bar
   let results = await Results.find({
-    title: searchValue
+    // Results references the module - the module links the mongodb data
+    title: { $regex: searchValue, $options: 'i' }
   })
 
   res.render('results', {
     resultsList: results
+    // resultsList references results for handlebars - html
   })
 })
 
